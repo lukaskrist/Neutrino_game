@@ -1,6 +1,6 @@
 # Neutrino_game
  
-This is the base code for the game of neutrino, which is quite famous in the social society TÅGEKAMMERET, as an easier way of chess. The purpose of this is to first make the game itself, after which it can either be optimized using reinforcement learning principles, or made online to have a "chess.com" like experience. This is naturally very ambitious and for now the goal is simply to get it to work. 
+This is the base code for the game of neutrino, which is quite famous in the social society TÅGEKAMMERET, as an easier version of chess. The purpose of this is to first make the game itself, after which it can either be optimized using reinforcement learning principles, or made online to have a "chess.com" like experience. This is naturally very ambitious and for now the goal is simply to get it to work. 
 
 It is made using pygame, and will be tried to make a .io website for it. 
 

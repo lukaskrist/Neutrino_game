@@ -6,28 +6,28 @@ Created on Tue May 10 16:57:12 2022
 """
 
 import pygame
-
+# Import pygame.locals for easier access to key coordinates
+# Updated to conform to flake8 and black standards
+from pygame.locals import (
+    K_UP,
+    K_DOWN,
+    K_LEFT,
+    K_RIGHT,
+    K_ESCAPE,
+    KEYDOWN,
+    QUIT,
+)
 
 #set up window
 screen = pygame.display.set_mode((500,500))
 
-
-
 black = (0,0,0)
-white = (255,255,255)
-window_height = 500
-window_width = 500
-def draw_grid():
-    blocksize = int(500/5)
-    for x in range(0,window_width,blocksize):
-        for y in range(0,window_height,blocksize):
-            rect = pygame.Rect(x, y, blocksize, blocksize)
-            pygame.draw.rect(screen,white,rect,1)
-
+from Helper_functions import *
 
 def main():
     #Run until quit
     pygame.init()
+    
     running = True
     global screen
     screen.fill(black)
@@ -35,13 +35,17 @@ def main():
     while running:
         draw_grid()
         for event in pygame.event.get():
+            if event.type == K_ESCAPE:
+                pygame.quit()
             if event.type == pygame.QUIT:
                 pygame.quit()
                 #sys.exit()
         
+        
+        
         pygame.display.update()
     screen.fill(black)
     
-    pygame.display.flip()
+    pygame.quit()
     
 main()

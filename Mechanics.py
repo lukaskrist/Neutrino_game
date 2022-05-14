@@ -25,19 +25,29 @@ def start(pos = None,state = None):
 def possible_positions(pos,state):
     possible = []
     if pos+[1,1] != state.any:
-        possible.append('UR')
+        possible.append([1,1])
     if pos+[1,0] != state.any:
-        possible.append('R')
+        possible.append([1,0])
     if pos+[-1,0] != state.any:
-        possible.append('DR')
+        possible.append([-1,0])
     if pos+[-1,-1] != state.any:
-        possible.append('DL')
+        possible.append([-1,-1])
     if pos+[-1,0] != state.any:
-        possible.append('L')
+        possible.append([-1,0])
     if pos+[-1,1] != state.any:
-        possible.append('UL')
+        possible.append([-1,1])
     if pos+[0,1] != state.any:
-        possible.append('U')
+        possible.append([0,1])
     if pos+[0,-1] != state.any:
-        possible.append('D')
+        possible.append([0,-1])
     return possible
+
+def check_if_won(pos,state):
+    
+
+    if len(possible_positions(pos, state)) == 0:
+        return "won"
+    if pos[1] == 4 or pos[1] == 0:
+        return "won"
+    else:
+        pass

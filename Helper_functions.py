@@ -20,3 +20,4 @@ def draw_grid():
         for y in range(0,window_height,blocksize):
             rect = pygame.Rect(x, y, blocksize, blocksize)
             pygame.draw.rect(screen,white,rect,1)
+            

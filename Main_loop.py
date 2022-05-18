@@ -23,6 +23,7 @@ screen = pygame.display.set_mode((500,500))
 
 black = (0,0,0)
 from Helper_functions import *
+from Mechanics import *
 
 def main():
     #Run until quit
@@ -30,8 +31,12 @@ def main():
     
     running = True
     global screen
+    pygame.display.init()
     screen.fill(black)
     CLOCK = pygame.time.Clock()
+    pos,state = start()
+    team_1_cap = pygame.image.load('Assets/Ceres-Top.jpg').convert()
+    team_2_cap = pygame.image.load('Assets/Ice.jpg').convert()
     while running:
         draw_grid()
         for event in pygame.event.get():
@@ -40,6 +45,10 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 #sys.exit()
+            if event.type == KEYDOWN:                                           #Hvis man vælger en event KEYDOWN, checker den mulige positioner
+                possible_positions(pos, state)                                  #Skal ændres til tryk på feltet
+                
+            check_if_won(pos, state)
         
         
         

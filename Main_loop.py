@@ -28,17 +28,16 @@ from Mechanics import *
 def main():
     #Run until quit
     pygame.init()
-    
+        
     running = True
     global screen
     pygame.display.init()
     screen.fill(black)
     CLOCK = pygame.time.Clock()
     pos,state = start()
-    team_1_cap = pygame.image.load('Assets/Ceres-Top.jpg').convert()
-    team_2_cap = pygame.image.load('Assets/Ice.jpg').convert()
+
     while running:
-        draw_grid()
+        draw_grid(pos,state)
         for event in pygame.event.get():
             if event.type == K_ESCAPE:
                 pygame.quit()
@@ -47,7 +46,12 @@ def main():
                 #sys.exit()
             if event.type == KEYDOWN:                                           #Hvis man vælger en event KEYDOWN, checker den mulige positioner
                 possible_positions(pos, state)                                  #Skal ændres til tryk på feltet
+            if event.type == pygame.mouse.get_pressed():
+                mouse_pos = pygame.mouse.get_pos()
                 
+                #if mouse_pos == :
+                    
+                    
             check_if_won(pos, state)
         
         

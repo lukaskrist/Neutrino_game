@@ -9,15 +9,15 @@ import pygame
 
 
 def draw_grid(pos,state):
-    screen = pygame.display.set_mode((500,500))
+    screen = pygame.display.set_mode((1000,1000))
     team_1_cap = pygame.image.load('Assets/Ceres-Top.jpg').convert()
     team_2_cap = pygame.image.load('Assets/Ice.jpg').convert()
     neutrino = pygame.image.load('Assets/Neutrino.png').convert()
     
     white = (255,255,255)
-    window_height = 500
-    window_width = 500
-    blocksize = int(500/5)
+    window_height = 1000
+    window_width = 1000
+    blocksize = int(1000/5)
     
     posi = [0,0]
     for x in range(0,window_width,blocksize):

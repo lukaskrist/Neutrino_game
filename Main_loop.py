@@ -19,7 +19,7 @@ from pygame.locals import (
 )
 
 #set up window
-screen = pygame.display.set_mode((500,500))
+screen = pygame.display.set_mode((1000,1000))
 
 black = (0,0,0)
 from Helper_functions import *

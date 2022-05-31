@@ -58,16 +58,16 @@ def main():
                     
                 
                 #turn = "player_2"
-            if turn == player_1_2:
+            if turn == "player_1_2":
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
                     
                     turn = "player_2_1"
         
-            if turn == player_2_1:
+            if turn == "player_2_1":
                 pass
             
-            if turn == player_2_2:
+            if turn == "player_2_2":
                 pass
                 
                     

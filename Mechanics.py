@@ -19,8 +19,8 @@ def start(pos = None,state = None):
     if state == None:
         state = []
         for i in range(5):
-            state.append([0,i])
-            state.append([4,i])
+            state.append([i,0])
+            state.append([i,4])
     return pos,state
     
 def possible_positions(pos,state):

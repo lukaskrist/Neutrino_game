@@ -24,15 +24,22 @@ def draw_grid(pos,state):
         for y in range(0,window_height,blocksize):
             rect = pygame.Rect(x, y, blocksize, blocksize)
             pygame.draw.rect(screen,white,rect,1)
+            for i in range(10):
+                if posi == state[i]:
+                    if i < 5:
+                        screen.blit(team_1_cap, rect)
+                    else:
+                        screen.blit(team_2_cap,rect)
+            '''
             if posi == any(state[0:5]):
                 screen.blit(team_1_cap,rect)
             if posi == any(state[5:-1]):
                 screen.blit(team_2_cap,rect)
+            '''
             if posi == pos:
                 screen.blit(neutrino,rect)
             
             posi[1] += 1
         posi[0] += 1
         posi[1] = 0
-            
             

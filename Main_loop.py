@@ -20,7 +20,7 @@ from pygame.locals import (
 
 #set up window
 screen = pygame.display.set_mode((1000,1000))
-
+turn = "player_1_1"
 black = (0,0,0)
 from Helper_functions import *
 from Mechanics import *
@@ -28,14 +28,16 @@ from Mechanics import *
 def main():
     #Run until quit
     pygame.init()
-        
+
     running = True
-    global screen
+    global screen, turn
     pygame.display.init()
     screen.fill(black)
-    CLOCK = pygame.time.Clock()
+    #CLOCK = pygame.time.Clock()
     pos,state = start()
-
+    
+    
+    
     while running:
         draw_grid(pos,state)
         for event in pygame.event.get():
@@ -43,16 +45,33 @@ def main():
                 pygame.quit()
             if event.type == pygame.QUIT:
                 pygame.quit()
-                #sys.exit()
-            if event.type == KEYDOWN:                                           #Hvis man vælger en event KEYDOWN, checker den mulige positioner
-                possible_positions(pos, state)                                  #Skal ændres til tryk på feltet
-            if event.type == pygame.mouse.get_pressed():
-                mouse_pos = pygame.mouse.get_pos()
                 
-                #if mouse_pos == :
+            if turn == "player_1_1":
+                a = check_if_won(pos, state)
+                if a == "won":
+                    running = False
+                
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
                     
+                    turn = "player_1_2"
                     
-            check_if_won(pos, state)
+                
+                #turn = "player_2"
+            if turn == player_1_2:
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
+                    
+                    turn = "player_2_1"
+        
+            if turn == player_2_1:
+                pass
+            
+            if turn == player_2_2:
+                pass
+                
+                    
+            #check_if_won(pos, state)
         
         
         

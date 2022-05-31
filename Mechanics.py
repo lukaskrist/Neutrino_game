@@ -20,6 +20,7 @@ def start(pos = None,state = None):
         state = []
         for i in range(5):
             state.append([i,0])
+        for i in range(5): 
             state.append([i,4])
     return pos,state
     

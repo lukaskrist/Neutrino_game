@@ -4,7 +4,7 @@ This is the base code for the game of neutrino, which is quite famous in the soc
 
 It is made using pygame, and will be tried to make a .io website for it. 
 
-<H5>Current implementations:<H5>
+<H5>Current implementations:</H5>
  
 Board is made
 
@@ -20,7 +20,7 @@ starting positions of all bricks have been made
  
  Turn order  
  
-<H5>Need to do:<H5> 
+<H5>Need to do:</H5> 
  
  Make Neutrino possible to take and move
  

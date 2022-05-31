@@ -5,21 +5,33 @@ This is the base code for the game of neutrino, which is quite famous in the soc
 It is made using pygame, and will be tried to make a .io website for it. 
 
 <H5>Current implementations:<H5>
-Board is made
-win/loss conditions implemented
-possible moves has been made.
-starting positions of all bricks have been made, but needs to be shown on the board.
-basic game loop is implemented
-
  
-<H5>Need to do:<H5>  
- Add assets to points  
+Board is made
+
+win/loss conditions implemented
+
+possible moves has been made.
+ 
+starting positions of all bricks have been made
+
+ basic game loop is implemented
+ 
+ Added assets to points 
+ 
  Turn order  
+ 
+<H5>Need to do:<H5> 
+ 
  Make Neutrino possible to take and move
  
  Show the different possible directions given the choice of piece.
+ 
  Make other blocks possible to move
+ 
  Make start screen
+ 
  Make win/loss screen
+ 
  add different possible characters
+ 
  add win/loss rate.

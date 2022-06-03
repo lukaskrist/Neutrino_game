@@ -10,11 +10,19 @@ import pygame
 
 def draw_grid(pos,state):
     '''
-    Drawing the grid, using the position of the neutrino
-    and the current state of the board. 
+    Drawing the grid
     It includes the assets first, and then inserts them into rectangles
     This should be updated every frame/every update.
-    position is not the best definition
+
+    Parameters
+    ----------
+    pos : the position of the neutrino
+    state : the current state of the board. (all 10 caps -the )
+
+    Returns
+    -------
+    a grid that is shown on the board
+
     '''
     screen = pygame.display.set_mode((1000,1000))
     team_1_cap = pygame.image.load('Assets/Ceres-Top.jpg').convert()
@@ -48,4 +56,30 @@ def draw_grid(pos,state):
             posi[1] += 1
         posi[0] += 1
         posi[1] = 0
-            
+    
+def check_position(event):
+    '''
+    Checking the position of the mouse, and checking which block it is
+    
+    Parameters
+    ----------
+    event : mouse click that has a position on the board. 
+
+    Returns
+    -------
+    posi : position of the block.
+
+    '''
+    window_height = 1000
+    window_width = 1000
+    blocksize = int(1000/5)
+    posi = [0,0]
+    
+    for x in range(0,window_width,blocksize):                                   
+        for y in range(0,window_height,blocksize):
+            rect = pygame.Rect(x, y, blocksize, blocksize)
+            if rect.collidepoint(pygame.mouse.get_pos()):
+                return posi
+            posi[1] += 1
+        posi[0] += 1
+        posi[1] = 0

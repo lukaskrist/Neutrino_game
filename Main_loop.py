@@ -41,41 +41,60 @@ def main():
     while running:
         draw_grid(pos,state)
         for event in pygame.event.get():
+            
+            ###
             if event.type == K_ESCAPE:
                 pygame.quit()
             if event.type == pygame.QUIT:
                 pygame.quit()
-                
+            
+            ###
             if turn == "player_1_1":
                 a = check_if_won(pos, state)
                 if a == "won":
                     running = False
+                    winner = "player_2"
                 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
-                    
-                    turn = "player_1_2"
-                    
-                
+                    pos_click = check_position(event)
+                    for possible in possible_positions(pos, state):
+                        if possible == pos_click:
+                            pos = possible
+                            
+                            turn = "player_1_2"
+                            continue
+                        
                 #turn = "player_2"
             if turn == "player_1_2":
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
-                    
                     turn = "player_2_1"
-        
+
             if turn == "player_2_1":
                 a = check_if_won(pos, state)
                 if a == "won":
                     running = False
+                    winner = "player_1"
+                
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
+                    pos_click = check_position(event)
+                    
+                    for possible in possible_positions(pos, state):
+                        if possible == pos_click:
+                            pos = possible
+                            
+                            turn = "player_1_2"
+   
+                    
             
             if turn == "player_2_2":
-                pass
-                
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    mouse_pos = pygame.mouse.get_pos()
                     
-            #check_if_won(pos, state)
-        
-        
+                    turn = "player_1_1"
+
         
         pygame.display.update()
     screen.fill(black)

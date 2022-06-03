@@ -65,7 +65,9 @@ def main():
                     turn = "player_2_1"
         
             if turn == "player_2_1":
-                pass
+                a = check_if_won(pos, state)
+                if a == "won":
+                    running = False
             
             if turn == "player_2_2":
                 pass

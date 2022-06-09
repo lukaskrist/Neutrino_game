@@ -59,9 +59,9 @@ def main():
                     mouse_pos = pygame.mouse.get_pos()
                     pos_click = check_position(event)
                     for possible in possible_positions(pos, state):
-                        if possible == pos_click:
-                            pos = possible
-                            
+
+                        if ([pos[0]+possible[0],pos[1]+possible[1]]) == pos_click:
+                            __,state,pos = move_block(pos,state,pos,possible)
                             turn = "player_1_2"
                             continue
                         
@@ -80,12 +80,13 @@ def main():
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     mouse_pos = pygame.mouse.get_pos()
                     pos_click = check_position(event)
-                    
                     for possible in possible_positions(pos, state):
-                        if possible == pos_click:
-                            pos = possible
+
+                        if ([pos[0]+possible[0],pos[1]+possible[1]]) == pos_click:
+                            __,state,pos = move_block(pos,state,pos,possible)
                             
-                            turn = "player_1_2"
+                            turn = "player_2_2"
+                            continue
    
                     
             

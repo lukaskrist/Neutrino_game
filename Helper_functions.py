@@ -78,8 +78,28 @@ def check_position(event):
     for x in range(0,window_width,blocksize):                                   
         for y in range(0,window_height,blocksize):
             rect = pygame.Rect(x, y, blocksize, blocksize)
+            
             if rect.collidepoint(pygame.mouse.get_pos()):
                 return posi
             posi[1] += 1
         posi[0] += 1
         posi[1] = 0
+
+
+def move_block(pos,state,block,possible):
+    Run = True
+    block = [block[0]+possible[0],block[1]+possible[1]]
+    while Run == True:
+        block = [block[0]+possible[0],block[1]+possible[1]]
+        if block[0] < 4:
+            if block[1] < 4:
+                if block[0] > 0:
+                    if block[1] > 0:
+                        continue
+        else:
+            Run = False
+            #if all(block) > 0:
+            #    if [block[0]+possible[0],block[1]+possible[1]] != any(state):                         
+             #       pos = [pos[0]+possible[0],pos[1]+possible[1]]
+        
+    return pos,state,block

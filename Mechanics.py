@@ -8,10 +8,6 @@ Created on Wed May 11 12:57:01 2022
 
 import pygame
 
-class Player(pygame.sprite.Sprite):
-    def __init__(self):
-        super(Player,self).__init__()
-
 def start(pos = None,state = None):
     if pos == None:
         pos = [2,2]

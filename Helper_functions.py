@@ -91,15 +91,12 @@ def move_block(pos,state,block,possible):
     block = [block[0]+possible[0],block[1]+possible[1]]
     while Run == True:
         block = [block[0]+possible[0],block[1]+possible[1]]
-        if block[0] < 4:
-            if block[1] < 4:
-                if block[0] > 0:
-                    if block[1] > 0:
-                        continue
+        if all(block) < 4:
+            if all(block) > 0:
+                #if block != any(state):
+                continue
         else:
+            block = [block[0]-possible[0],block[1]-possible[1]]
             Run = False
-            #if all(block) > 0:
-            #    if [block[0]+possible[0],block[1]+possible[1]] != any(state):                         
-             #       pos = [pos[0]+possible[0],pos[1]+possible[1]]
         
     return pos,state,block

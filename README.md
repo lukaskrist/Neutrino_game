@@ -20,9 +20,11 @@ starting positions of all bricks have been made
  
  Turn order  
  
+ Make Neutrino possible to take.
+ 
 <H5>Need to do:</H5> 
  
- Make Neutrino possible to take and move
+ Make Neutrino possible to move
  
  Show the different possible directions given the choice of piece.
  

@@ -22,13 +22,13 @@ starting positions of all bricks have been made
  
  Make Neutrino possible to take.
  
-<H5>Need to do:</H5> 
- 
  Make Neutrino possible to move
  
- Show the different possible directions given the choice of piece.
- 
  Make other blocks possible to move
+  
+<H5>Need to do:</H5> 
+ 
+ Show the different possible directions given the choice of piece.
  
  Make start screen
  

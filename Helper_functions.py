@@ -48,6 +48,7 @@ def draw_grid(state):
             posi[1] += 1
         posi[0] += 1
         posi[1] = 0 
+
     
 def check_position(event):
     '''
@@ -76,19 +77,3 @@ def check_position(event):
             posi[1] += 1
         posi[0] += 1
         posi[1] = 0
-
-
-def move_block(pos,state,block,possible):
-    Run = True
-    block = [block[0]+possible[0],block[1]+possible[1]]
-    while Run == True:
-        block = [block[0]+possible[0],block[1]+possible[1]]
-        if all(block) < 4:
-            if all(block) > 0:
-                #if block != any(state):
-                continue
-        else:
-            block = [block[0]-possible[0],block[1]-possible[1]]
-            Run = False
-        
-    return pos,state,block

@@ -23,6 +23,13 @@ start[2,2] = int(3)
 from Helper_functions import *
 from Mechanics import *
 
+
+def start_screen():
+    pygame.display.init()
+
+
+
+
 def main():
     pygame.init()
 
@@ -49,7 +56,7 @@ def main():
                 if a != None:
                     running = False
                     if a == "won":
-                        a = "player_1_won"
+                        a = "player_2_won"
                     print(a)
                     
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -63,10 +70,20 @@ def main():
                             continue
                         
             if turn == "player_1_2":
+                
+                a = check_if_won(state)
+                if a != None:
+                    running = False
+                    if a == "won":
+                        a = "player_1_won"
+                    print(a)
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     pos_click = check_position(event)
                     if state[tuple(pos_click)] == 1:
                         neutrino = pos_click
+                        for possible in possible_positions(state, neutrino):
+                            state[possible] = -1
+                            
                         turn = "player_1_3"
                         pygame.time.delay(100)
                         continue
@@ -101,6 +118,13 @@ def main():
                             continue
                         
             if turn == "player_2_2":
+                a = check_if_won(state)
+                if a != None:
+                    running = False
+                    if a == "won":
+                        a = "player_2_won"
+                    print(a)
+                
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     pos_click = check_position(event)
                     if state[tuple(pos_click)] == 2:

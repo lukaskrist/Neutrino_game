@@ -24,7 +24,7 @@ from Helper_functions import *
 from Mechanics import *
 
 def main():
-    pygame.init()
+    #pygame.init()
 
     running = True
     global screen, turn
@@ -122,6 +122,19 @@ def main():
     return a
                     
 
+def start_screen():
+    blank = 0
+    running = True
+    while running == True:
+        for event in pygame.event.get():
+            if event == pygame.QUIT:
+                pygame.quit()
+            if event == pygame.MOUSEBUTTONDOWN:
+                running = False
+        
+        
+    return blank
+
 def end_screen(winner):
     
     run = True
@@ -133,7 +146,9 @@ def end_screen(winner):
 
 
 Run = True
-while Run:
+pygame.init()
+start_screen()
+while Run:    
     a = main()
     replay = end_screen(a)
     if replay == "No":

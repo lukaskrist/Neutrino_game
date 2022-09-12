@@ -27,6 +27,7 @@ def draw_grid(state):
     team_1_cap = pygame.image.load('Assets/Ceres-Top.jpg').convert()
     team_2_cap = pygame.image.load('Assets/Ice.jpg').convert()
     neutrino = pygame.image.load('Assets/Neutrino.png').convert()
+    possible = pygame.image.load('Assets/Possible.jpg').convert()
     
     white = (255,255,255)
     window_height = 1000
@@ -44,6 +45,9 @@ def draw_grid(state):
                 screen.blit(team_1_cap,rect)
             if state[tuple(posi)] == 2:
                 screen.blit(team_2_cap,rect)
+            if state[tuple(posi)] < 0:
+                screen.blit(possible,rect)
+            
             
             posi[1] += 1
         posi[0] += 1
